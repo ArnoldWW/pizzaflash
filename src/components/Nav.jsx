@@ -1,14 +1,16 @@
+import { Link } from "react-router-dom";
+
 const LINKS = [
   {
-    href: "",
+    href: "/",
     text: "inicio"
   },
   {
-    href: "",
+    href: "/",
     text: "Menu"
   },
   {
-    href: "",
+    href: "/",
     text: "carrito"
   }
 ];
@@ -18,18 +20,18 @@ export default function Nav() {
     <nav className="max-w-[1000px] mx-auto w-[90%] py-5 flex md:flex-row flex-col justify-between font-bold uppercase gap-5">
       <div className="flex md:flex-row flex-col justify-start gap-5">
         {LINKS.map((link) => (
-          <a href={link.href} className="hover:underline">
+          <Link to={link.href} className="hover:underline">
             {link.text}
-          </a>
+          </Link>
         ))}
       </div>
       <div className="flex md:flex-row flex-col justify-end gap-5">
-        <a href="" className="hover:underline">
+        <Link to="/login" className="hover:underline">
           Iniciar Sesión
-        </a>
-        <a href="" className="hover:underline">
+        </Link>
+        <Link to="/signup" className="hover:underline">
           Registrarse
-        </a>
+        </Link>
       </div>
     </nav>
   );

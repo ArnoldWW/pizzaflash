@@ -8,3 +8,15 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+
+@layer components {
+  .btn {
+    @apply uppercase px-5 py-3 text-white font-bold text-center  mt-3 rounded-lg;
+  }
+  .btn-black {
+    @apply btn bg-black;
+  }
+  .btn-orange {
+    @apply btn bg-orange-600;
+  }
+}

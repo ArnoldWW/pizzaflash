@@ -48,11 +48,8 @@ const TESTIMONIALS = [
 
 function App() {
   return (
-    <>
-      <Header />
-      <Nav />
-
-      <section className="max-w-[1000px] mx-auto w-[90%] bg-orange-600 rounded-2xl overflow-hidden py-14 px-8 mb-5">
+    <div className="max-w-[1000px] mx-auto w-[90%]">
+      <section className=" bg-orange-600 rounded-2xl overflow-hidden py-14 px-8 mb-5">
         <Splide
           aria-label="Pizza destacadas"
           options={{
@@ -83,10 +80,7 @@ function App() {
                   </h2>
                   <p className="font-bold">{slide.ingredients}</p>
 
-                  <a
-                    href="/"
-                    className="inline-block px-5 py-3 text-white font-bold text-center bg-black mt-3 rounded-lg"
-                  >
+                  <a href="/" className="inline-block btn-black">
                     ORDENAR
                   </a>
                 </div>
@@ -96,7 +90,7 @@ function App() {
         </Splide>
       </section>
 
-      <section className="max-w-[1000px] mx-auto w-[90%] grid md:grid-cols-3 grid-cols-1 md:gap-x-5 gap-y-5">
+      <section className=" grid md:grid-cols-3 grid-cols-1 md:gap-x-5 gap-y-5">
         <div className="bg-orange-600 rounded-2xl flex flex-col md:flex-row overflow-hidden col-span-2 min-h-[250px]">
           <img
             src="img/delivery.jpg"
@@ -123,7 +117,7 @@ function App() {
         </div>
       </section>
 
-      <section className="max-w-[1000px] mx-auto w-[90%] my-5 grid grid-cols-1 md:grid-cols-3 gap-5">
+      <section className=" my-5 grid grid-cols-1 md:grid-cols-3 gap-5">
         {TESTIMONIALS.map((testimonial) => (
           <div
             className={`flex flex-col justify-center items-center gap-5 ${testimonial.bg} rounded-2xl px-5 py-10 font-bold text-white`}
@@ -139,9 +133,7 @@ function App() {
           </div>
         ))}
       </section>
-
-      <Footer />
-    </>
+    </div>
   );
 }
 
