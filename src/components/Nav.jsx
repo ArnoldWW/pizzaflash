@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const LINKS = [
   {
@@ -6,11 +6,11 @@ const LINKS = [
     text: "inicio"
   },
   {
-    href: "/",
+    href: "/menu",
     text: "Menu"
   },
   {
-    href: "/",
+    href: "/cart",
     text: "carrito"
   }
 ];
@@ -20,18 +20,46 @@ export default function Nav() {
     <nav className="max-w-[1000px] mx-auto w-[90%] py-5 flex md:flex-row flex-col justify-between font-bold uppercase gap-5">
       <div className="flex md:flex-row flex-col justify-start gap-5">
         {LINKS.map((link) => (
-          <Link to={link.href} className="hover:underline">
+          <NavLink
+            key={link.href}
+            to={link.href}
+            className={({ isActive, isPending }) =>
+              isPending
+                ? "opacity-50"
+                : isActive
+                ? "text-orange-600"
+                : "hover:underline"
+            }
+          >
             {link.text}
-          </Link>
+          </NavLink>
         ))}
       </div>
       <div className="flex md:flex-row flex-col justify-end gap-5">
-        <Link to="/login" className="hover:underline">
+        <NavLink
+          to="/login"
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "opacity-50"
+              : isActive
+              ? "text-orange-600"
+              : "hover:underline"
+          }
+        >
           Iniciar Sesión
-        </Link>
-        <Link to="/signup" className="hover:underline">
+        </NavLink>
+        <NavLink
+          to="/signup"
+          className={({ isActive, isPending }) =>
+            isPending
+              ? "opacity-50"
+              : isActive
+              ? "text-orange-600"
+              : "hover:underline"
+          }
+        >
           Registrarse
-        </Link>
+        </NavLink>
       </div>
     </nav>
   );
