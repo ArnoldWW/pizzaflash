@@ -1,9 +1,5 @@
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import Header from "./components/Header";
-import Nav from "./components/Nav";
-
 import "@splidejs/react-splide/css";
-import Footer from "./components/Footer";
 
 const SLIDES = [
   {
@@ -120,6 +116,7 @@ function App() {
       <section className=" my-5 grid grid-cols-1 md:grid-cols-3 gap-5">
         {TESTIMONIALS.map((testimonial) => (
           <div
+            key={testimonial.id}
             className={`flex flex-col justify-center items-center gap-5 ${testimonial.bg} rounded-2xl px-5 py-10 font-bold text-white`}
           >
             <p className="text-2xl text-center">"{testimonial.text}"</p>
