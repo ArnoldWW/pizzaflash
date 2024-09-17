@@ -5,6 +5,7 @@ import Layout from "./Layout.jsx";
 import Home from "./Home.jsx";
 import LogIn from "./pages/login.jsx";
 import SingUp from "./pages/SingUp.jsx";
+import Menu, { loader as menuLoader } from "./pages/Menu.jsx";
 
 import "./index.css";
 
@@ -24,6 +25,11 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <SingUp />
+      },
+      {
+        path: "/menu",
+        element: <Menu />,
+        loader: menuLoader
       }
     ]
   }
