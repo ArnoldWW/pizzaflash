@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import { getPizzas } from "../firebase/db";
+import { getMenu } from "../firebase/db";
 
 const PIZZAS = [
   {
@@ -12,7 +12,7 @@ const PIZZAS = [
 ];
 
 export async function loader() {
-  const menu = await getPizzas();
+  const menu = await getMenu();
   return { menu };
 }
 
