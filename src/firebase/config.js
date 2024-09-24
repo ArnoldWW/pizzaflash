@@ -4,13 +4,15 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 // Firebase config
+
+//Configuracion de firebase, con variables de entorno
 const firebaseConfig = {
-  apiKey: "AIzaSyARGaSK8YC5UPp-8AdlxD13AiibYq5bCOE",
-  authDomain: "pizzaflash-fb728.firebaseapp.com",
-  projectId: "pizzaflash-fb728",
-  storageBucket: "pizzaflash-fb728.appspot.com",
-  messagingSenderId: "447234121230",
-  appId: "1:447234121230:web:b3f04530bf0f48dc82a65f"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID
 };
 
 //Iniciar firebase
