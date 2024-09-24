@@ -15,7 +15,7 @@ export const createUser = async (name, email, password) => {
     await updateProfile(auth.currentUser, {
       displayName: name
     });
-    toast.success("Usuario creado"); //mensaje de alerta
+    toast.success("Usuario creado, se inicio sesión"); //mensaje de alerta
     return user;
   } catch (error) {
     const errorCode = error.code;
