@@ -5,7 +5,9 @@ import AuthContext from "../context/AuthContext";
 import { Link } from "react-router-dom";
 
 export default function Cart() {
+  /* obtener el usuario logueado */
   const { user } = useContext(AuthContext);
+  /* obtener el estado del carrito */
   const { cart, addProduct, removeProduct, subtractProduct, order } =
     useContext(CartContext);
   const delivery = 0;

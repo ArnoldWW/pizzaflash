@@ -2,6 +2,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { Link } from "react-router-dom";
 
+/* array para los slides */
 const SLIDES = [
   {
     id: 1,
@@ -19,6 +20,7 @@ const SLIDES = [
   }
 ];
 
+/* array de testimonios */
 const TESTIMONIALS = [
   {
     id: 1,

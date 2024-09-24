@@ -4,23 +4,16 @@ import { useContext } from "react";
 import CartContext from "../context/CartContext";
 import { formatPrice } from "../utils";
 
-const PIZZAS = [
-  {
-    id: 1,
-    name: "Nombre de la pizza",
-    ingredients: "Ingredientes",
-    price: "27.000",
-    img: "pizzas/1.avif"
-  }
-];
-
+/* obtener las pizzas del menú */
 export async function loader() {
   const menu = await getMenu();
   return { menu };
 }
 
 export default function Menu() {
+  /* obtener el menú */
   const { menu } = useLoaderData();
+  /* función para agregar el producto al carrito */
   const { addProduct } = useContext(CartContext);
 
   return (

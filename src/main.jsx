@@ -45,6 +45,7 @@ const router = createBrowserRouter([
   }
 ]);
 
+/*  crear el root del proyecto */
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AuthProvider>
