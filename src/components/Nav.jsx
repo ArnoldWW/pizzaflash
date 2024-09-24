@@ -10,7 +10,7 @@ const LINKS = [
   },
   {
     href: "/menu",
-    text: "Menu"
+    text: "Menú"
   },
   {
     href: "/cart",

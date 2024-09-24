@@ -23,7 +23,7 @@ const SLIDES = [
 const TESTIMONIALS = [
   {
     id: 1,
-    text: "Es la pizza más vendida de la plataforma",
+    text: "Una pizza de 5 estrellas",
     logo: "img/rappi.png",
     alt: "logo-rappi",
     bg: "bg-black"
@@ -37,7 +37,7 @@ const TESTIMONIALS = [
   },
   {
     id: 3,
-    text: "Es la pizza más vendida de la plataforma",
+    text: "Es una de las pizzas con mejores calificaciones",
     logo: "img/uber-eats.png",
     alt: "logo-uber-eats",
     bg: "bg-orange-600"
@@ -100,8 +100,9 @@ function App() {
               Domicilios Gratis
             </h2>
             <p className="">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias,
-              accusamus.
+              {/* mensaje de domicilios gratis de pizzas en bogotá corto */}
+              Contamos con más de +1000 repartidores de pizzas en Bogotá y con
+              domicilios gratis.
             </p>
           </div>
         </div>
