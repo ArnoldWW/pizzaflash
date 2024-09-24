@@ -6,6 +6,9 @@ import Home from "./Home.jsx";
 import LogIn from "./pages/login.jsx";
 import SingUp from "./pages/SingUp.jsx";
 import Menu, { loader as menuLoader } from "./pages/Menu.jsx";
+import { Toaster } from "react-hot-toast";
+
+import { AuthProvider } from "./context/AuthContext.jsx";
 
 import "./index.css";
 
@@ -37,6 +40,9 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+      <Toaster />
+    </AuthProvider>
   </StrictMode>
 );

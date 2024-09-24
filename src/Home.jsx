@@ -1,3 +1,5 @@
+import { useContext, useEffect } from "react";
+import AuthContext from "./context/AuthContext";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
@@ -43,6 +45,12 @@ const TESTIMONIALS = [
 ];
 
 function App() {
+  const { user } = useContext(AuthContext);
+
+  useEffect(() => {
+    console.log(user);
+  }, []);
+
   return (
     <div className="max-w-[1000px] mx-auto w-[90%]">
       <section className=" bg-orange-600 rounded-2xl overflow-hidden py-14 px-8 mb-5">

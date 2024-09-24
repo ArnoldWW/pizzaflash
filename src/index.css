@@ -11,7 +11,7 @@ body {
 
 @layer components {
   .btn {
-    @apply uppercase px-5 py-3 text-white font-bold text-center  mt-3 rounded-lg;
+    @apply uppercase px-5 py-3 text-white font-bold text-center rounded-lg;
   }
   .btn-black {
     @apply btn bg-black;
