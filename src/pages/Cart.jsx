@@ -10,10 +10,6 @@ export default function Cart() {
     useContext(CartContext);
   const delivery = 0;
 
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
-
   /* calcular el total del carrito incluyendo el envio */
   const totalCart = useMemo(() => {
     const total = cart.reduce((acc, product) => {

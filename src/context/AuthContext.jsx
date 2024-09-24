@@ -10,8 +10,6 @@ export function AuthProvider({ children }) {
 
   //observador cuando cambia el usuario logueado
   onAuthStateChanged(auth, (user) => {
-    console.log("cambio de usuario");
-
     if (user) {
       //hay usuario logueado
       setUser(user);

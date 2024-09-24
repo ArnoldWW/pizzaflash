@@ -28,7 +28,6 @@ export default function logIn() {
 
   //redirigir al inicio si el usuario ya existe
   useEffect(() => {
-    console.log(user);
     if (user) return navigate("/");
   }, [user]);
 
