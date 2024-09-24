@@ -12,6 +12,7 @@ import { AuthProvider } from "./context/AuthContext.jsx";
 
 import "./index.css";
 
+//rutas de la aplicacion
 const router = createBrowserRouter([
   {
     path: "/",
@@ -42,7 +43,7 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AuthProvider>
       <RouterProvider router={router} />
-      <Toaster />
+      <Toaster position="top-right" />
     </AuthProvider>
   </StrictMode>
 );
