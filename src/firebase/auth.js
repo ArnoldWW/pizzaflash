@@ -4,22 +4,11 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
-  signOut
+  signOut,
+  onAuthStateChanged
 } from "firebase/auth";
 
-export const getUserSesion = () => {
-  const currentUser = auth.currentUser;
-
-  if (currentUser) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/auth.user
-    return currentUser;
-  } else {
-    // No user is signed in.
-    return null;
-  }
-};
-
+//crear usuario
 export const createUser = async (name, email, password) => {
   try {
     const user = await createUserWithEmailAndPassword(auth, email, password);
@@ -52,7 +41,7 @@ export const signIn = async (email, password) => {
   }
 };
 
-//cerrar sesion
+//cerrar sesion en firebase
 export const logOut = async () => {
   try {
     await signOut(auth);
