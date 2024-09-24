@@ -1,7 +1,5 @@
-import "./config";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
-
-const db = getFirestore();
+import { db } from "./config";
+import { collection, getDocs } from "firebase/firestore";
 
 export const getMenu = async () => {
   const querySnapshot = await getDocs(collection(db, "pizzas"));

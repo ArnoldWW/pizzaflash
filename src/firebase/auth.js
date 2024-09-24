@@ -1,14 +1,11 @@
 import toast from "react-hot-toast";
-import "./config";
+import { auth } from "./config";
 import {
   createUserWithEmailAndPassword,
-  getAuth,
   signInWithEmailAndPassword,
   updateProfile,
   signOut
 } from "firebase/auth";
-
-export const auth = getAuth();
 
 export const getUserSesion = () => {
   const currentUser = auth.currentUser;
@@ -34,6 +31,7 @@ export const createUser = async (name, email, password) => {
   } catch (error) {
     const errorCode = error.code;
     const errorMessage = error.message;
+    toast.error("Error al crear usuario, el correo ya está en uso");
     console.error(errorMessage);
   }
 };
