@@ -1,9 +1,10 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import AuthContext from "../context/AuthContext";
 import { useFormik } from "formik";
 import { createUser } from "../firebase/auth";
 import { useNavigate } from "react-router-dom";
 
+//validacion de crear cuenta
 const validate = (values) => {
   const errors = {};
 
@@ -27,9 +28,16 @@ const validate = (values) => {
 };
 
 export default function SingUp() {
-  const { setUser } = useContext(AuthContext);
+  //estado global
+  const { user, setUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
+  //redireccionar al inicio si el usuario ya existe
+  useEffect(() => {
+    if (user) return navigate("/");
+  }, [user]);
+
+  //Libreria formik para los formularios
   const formik = useFormik({
     initialValues: {
       name: "",

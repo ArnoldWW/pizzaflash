@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { signIn } from "../firebase/auth";
 
+//validaciones del login
 const validate = (values) => {
   const errors = {};
 
@@ -21,13 +22,17 @@ const validate = (values) => {
 };
 
 export default function logIn() {
+  //estado global
   const { user, setUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
+  //redirigir al inicio si el usuario ya existe
   useEffect(() => {
     console.log(user);
-  }, []);
+    if (user) return navigate("/");
+  }, [user]);
 
+  //Libreria formik para los formularios
   const formik = useFormik({
     initialValues: {
       email: "",

@@ -1,16 +1,27 @@
 import { createContext, useEffect, useState } from "react";
-import { getUserSesion } from "../firebase/auth";
+import { auth } from "../firebase/config";
+import { onAuthStateChanged } from "firebase/auth";
 
 const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
+  //estado global
   const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    const userData = getUserSesion();
-    setUser(userData);
-  }, [user]);
+  //observador cuando cambia el usuario logueado
+  onAuthStateChanged(auth, (user) => {
+    console.log("cambio de usuario");
 
+    if (user) {
+      //hay usuario logueado
+      setUser(user);
+    } else {
+      //No hay usuario logueado
+      setUser(null);
+    }
+  });
+
+  //Provider para el contexto
   return (
     <AuthContext.Provider value={{ user, setUser }}>
       {children}
