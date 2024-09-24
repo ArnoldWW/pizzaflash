@@ -38,10 +38,12 @@ export default function SingUp() {
     },
     validate,
     onSubmit: async (values) => {
-      alert(JSON.stringify(values, null, 2));
       const user = await createUser(values.name, values.email, values.password);
-      setUser(user);
-      navigate("/");
+
+      if (user) {
+        setUser(user);
+        navigate("/");
+      }
     }
   });
 
