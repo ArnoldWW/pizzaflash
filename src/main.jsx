@@ -5,10 +5,12 @@ import Layout from "./Layout.jsx";
 import Home from "./Home.jsx";
 import LogIn from "./pages/login.jsx";
 import SingUp from "./pages/SingUp.jsx";
+import Cart from "./pages/Cart.jsx";
 import Menu, { loader as menuLoader } from "./pages/Menu.jsx";
 import { Toaster } from "react-hot-toast";
 
 import { AuthProvider } from "./context/AuthContext.jsx";
+import { CartProvider } from "./context/CartContext.jsx";
 
 import "./index.css";
 
@@ -34,6 +36,10 @@ const router = createBrowserRouter([
         path: "/menu",
         element: <Menu />,
         loader: menuLoader
+      },
+      {
+        path: "/cart",
+        element: <Cart />
       }
     ]
   }
@@ -42,8 +48,10 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AuthProvider>
-      <RouterProvider router={router} />
-      <Toaster position="top-right" toastOptions={{ duration: 3000 }} />
+      <CartProvider>
+        <RouterProvider router={router} />
+        <Toaster position="top-right" toastOptions={{ duration: 3000 }} />
+      </CartProvider>
     </AuthProvider>
   </StrictMode>
 );

@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import AuthContext from "../context/AuthContext";
 import { useFormik } from "formik";
 import { createUser } from "../firebase/auth";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 //validacion de crear cuenta
 const validate = (values) => {
@@ -109,6 +109,9 @@ export default function SingUp() {
         <button className="btn-orange" type="submit">
           Registrarse
         </button>
+        <Link className="hover:underline" to="/login">
+          ¿ya tienes cuenta? Inicia sesión
+        </Link>
       </form>
     </div>
   );

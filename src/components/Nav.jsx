@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import { logOut } from "../firebase/auth";
+import CartContext from "../context/CartContext";
 
 const LINKS = [
   {
@@ -20,6 +21,7 @@ const LINKS = [
 
 export default function Nav() {
   const { user, setUser } = useContext(AuthContext);
+  const { cart } = useContext(CartContext);
 
   const handleClickLogout = async () => {
     await logOut();
@@ -42,6 +44,9 @@ export default function Nav() {
             }
           >
             {link.text}
+            {link.href === "/cart" && (
+              <span className="ml-1">({cart.length})</span>
+            )}
           </NavLink>
         ))}
       </div>

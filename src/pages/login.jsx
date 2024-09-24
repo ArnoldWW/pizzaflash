@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import AuthContext from "../context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { signIn } from "../firebase/auth";
 
@@ -91,6 +91,10 @@ export default function logIn() {
         <button className="btn-orange" type="submit">
           Iniciar Sesión
         </button>
+
+        <Link className="hover:underline" to="/signup">
+          ¿No tienes cuenta? Regístrate
+        </Link>
       </form>
     </div>
   );

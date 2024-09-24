@@ -1,7 +1,6 @@
-import { useContext, useEffect } from "react";
-import AuthContext from "./context/AuthContext";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
+import { Link } from "react-router-dom";
 
 const SLIDES = [
   {
@@ -78,9 +77,9 @@ function App() {
                   </h2>
                   <p className="font-bold">{slide.ingredients}</p>
 
-                  <a href="/" className="inline-block btn-black">
+                  <Link to="/menu" className="inline-block btn-black">
                     ORDENAR
-                  </a>
+                  </Link>
                 </div>
               </div>
             </SplideSlide>
