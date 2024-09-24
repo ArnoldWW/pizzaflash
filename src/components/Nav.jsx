@@ -48,7 +48,7 @@ export default function Nav() {
       <div className="flex md:flex-row flex-col justify-end gap-5">
         {user ? (
           <div className="flex items-center gap-5">
-            <p>Hola {user?.displayName}</p>
+            <p>Hola, {user?.displayName}</p>
             <button
               type=" button"
               className="btn-orange"
