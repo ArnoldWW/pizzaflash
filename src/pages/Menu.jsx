@@ -33,7 +33,7 @@ export default function Menu() {
             <p className="text-white">GRANDE - 35.5 CM PEPPERONI</p>
             <p className="text-white">$20.900</p>
             <p className="text-sm">ingredientes</p>
-            <button className="btn-black">Añadir</button>
+            <button className="btn-black my-2">Añadir</button>
           </div>
         </div>
       ))}
