@@ -47,7 +47,7 @@ function CartProvider({ children }) {
         })
       );
       //notificar al usuario
-      return toast.success("Se restao la unidad al producto");
+      return toast.success("Se resto la unidad al producto");
     }
   };
 
