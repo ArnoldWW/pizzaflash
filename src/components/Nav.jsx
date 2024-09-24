@@ -4,6 +4,7 @@ import AuthContext from "../context/AuthContext";
 import { logOut } from "../firebase/auth";
 import CartContext from "../context/CartContext";
 
+/* array de links para el menú de navegación */
 const LINKS = [
   {
     href: "/",
@@ -20,9 +21,12 @@ const LINKS = [
 ];
 
 export default function Nav() {
+  /* obtener el usuario logueado */
   const { user, setUser } = useContext(AuthContext);
+  /* obtener el estado del carrito */
   const { cart } = useContext(CartContext);
 
+  /* función para cerrar sesión */
   const handleClickLogout = async () => {
     await logOut();
     setUser(null);
