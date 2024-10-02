@@ -27,7 +27,7 @@ const validate = (values) => {
   return errors;
 };
 
-export default function SingUp() {
+export default function SignUp() {
   //estado global
   const { user, setUser } = useContext(AuthContext);
   const navigate = useNavigate();

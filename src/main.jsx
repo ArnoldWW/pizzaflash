@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./Layout.jsx";
 import Home from "./Home.jsx";
 import LogIn from "./pages/login.jsx";
-import SingUp from "./pages/SingUp.jsx";
+import SignUp from "./pages/SignUp.jsx";
 import Cart from "./pages/Cart.jsx";
 import Menu, { loader as menuLoader } from "./pages/Menu.jsx";
 import { Toaster } from "react-hot-toast";
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/signup",
-        element: <SingUp />
+        element: <SignUp />
       },
       {
         path: "/menu",
