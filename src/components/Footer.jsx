@@ -25,8 +25,8 @@ export default function Footer() {
         </li>
       </ul>
       <p className="mt-2">
-        ©2003-2024 PizzaFlash. Todos los derechos reservados. El nombre,
-        logotipos y marcas relacionadas de PizzaFlash®.
+        ©2003-{new Date().getFullYear()} PizzaFlash. Todos los derechos
+        reservados. El nombre, logotipos y marcas relacionadas de PizzaFlash®.
       </p>
     </footer>
   );
