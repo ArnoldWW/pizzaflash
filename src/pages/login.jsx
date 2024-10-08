@@ -52,7 +52,7 @@ export default function logIn() {
 
   return (
     <div className="max-w-[1000px] mx-auto w-[90%] my-12">
-      <h1 className="text-4xl font-bold text-center mb-5">
+      <h1 className="text-4xl font-bold text-center uppercase mb-5">
         Inicia sesion en pizzaflash
       </h1>
 

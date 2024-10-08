@@ -57,7 +57,7 @@ export default function SignUp() {
 
   return (
     <div className="max-w-[1000px] mx-auto w-[90%] my-12">
-      <h1 className="text-4xl font-bold text-center mb-5">
+      <h1 className="text-4xl font-bold text-center uppercase mb-5">
         Registrate en pizzaflash
       </h1>
 

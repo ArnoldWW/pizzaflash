@@ -25,7 +25,7 @@ export default function Nav() {
   const [showMenu, setShowMenu] = useState(false);
 
   /* obtener el usuario logueado */
-  const { user, setUser } = useContext(AuthContext);
+  const { user, isAdmin, setUser } = useContext(AuthContext);
   /* obtener el estado del carrito */
   const { cart } = useContext(CartContext);
 
@@ -67,11 +67,25 @@ export default function Nav() {
               )}
             </NavLink>
           ))}
+          {isAdmin && user && (
+            <NavLink
+              to="/admin-dashboard"
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? "opacity-50"
+                  : isActive
+                  ? "text-orange-600"
+                  : "hover:underline"
+              }
+            >
+              Panel de administración
+            </NavLink>
+          )}
         </div>
         <div className="flex md:flex-row items-center justify-center flex-col gap-5">
           {user ? (
             <div className="flex items-center gap-5">
-              <p>Hola, {user?.displayName}</p>
+              <p>Hola, {user?.displayName || "admin"}</p>
               <button
                 type=" button"
                 className="btn-orange"

@@ -13,6 +13,9 @@ import { AuthProvider } from "./context/AuthContext.jsx";
 import { CartProvider } from "./context/CartContext.jsx";
 
 import "./index.css";
+import AdminDashboard, {
+  loader as adminDashboardLoader
+} from "./pages/AdminDashboard.jsx";
 
 //rutas de la aplicacion
 const router = createBrowserRouter([
@@ -40,6 +43,11 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />
+      },
+      {
+        path: "/admin-dashboard",
+        element: <AdminDashboard />,
+        loader: adminDashboardLoader
       }
     ]
   }

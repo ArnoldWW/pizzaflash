@@ -18,7 +18,9 @@ export default function Layout() {
 
       <Header />
       <Nav />
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
       <Footer />
     </div>
   );
