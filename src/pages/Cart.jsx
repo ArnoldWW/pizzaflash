@@ -94,7 +94,7 @@ export default function Cart() {
         </>
       ) : (
         <p className="text-center text-2xl font-bold my-5">
-          Tu carrito esta vacio
+          Tu carrito esta vacío
         </p>
       )}
     </div>
