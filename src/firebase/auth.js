@@ -4,8 +4,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
-  signOut,
-  onAuthStateChanged
+  signOut
 } from "firebase/auth";
 
 //crear usuario
@@ -44,8 +43,10 @@ export const signIn = async (email, password) => {
 //cerrar sesion en firebase
 export const logOut = async () => {
   try {
-    await signOut(auth);
-    toast.success("Sesión cerrada"); //mensaje de alerta
+    if (confirm("¿Estás seguro que deseas cerrar sesión?")) {
+      await signOut(auth);
+      toast.success("Sesión cerrada"); //mensaje de alerta
+    }
   } catch (error) {
     const errorCode = error.code;
     const errorMessage = error.message;
