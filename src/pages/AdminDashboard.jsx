@@ -30,27 +30,31 @@ export default function AdminDashboard() {
 
   /* función para cambiar el estado de una pizza */
   const changePizzaStatus = async (pizza) => {
-    //obtener la pizza actual del menu
-    const currentPizza = pizzas.find((p) => p.id === pizza.id);
+    if (
+      confirm("¿Estás seguro de que quieres cambiar el estado de la pizza?")
+    ) {
+      //obtener la pizza actual del menu
+      const currentPizza = pizzas.find((p) => p.id === pizza.id);
 
-    //obtener el estado actual de la pizza
-    const currentStatus = currentPizza.available;
+      //obtener el estado actual de la pizza
+      const currentStatus = currentPizza.available;
 
-    //actualizar el estado local del menu
-    const newPizzas = pizzas.map((p) => {
-      if (p.id === pizza.id) {
-        return { ...p, available: !currentStatus };
-      }
-      return p;
-    });
+      //actualizar el estado local del menu
+      const newPizzas = pizzas.map((p) => {
+        if (p.id === pizza.id) {
+          return { ...p, available: !currentStatus };
+        }
+        return p;
+      });
 
-    setPizzas(newPizzas);
+      setPizzas(newPizzas);
 
-    //cambiar el estado de la pizza
-    await updatePizzaStatus(pizza.id, !currentStatus);
+      //cambiar el estado de la pizza
+      await updatePizzaStatus(pizza.id, !currentStatus);
 
-    /* eliminar la pizza, si esta en el carrito del local storage */
-    removeProductNotAvailable(pizza);
+      /* eliminar la pizza, si esta en el carrito del local storage */
+      removeProductNotAvailable(pizza);
+    }
   };
 
   return (

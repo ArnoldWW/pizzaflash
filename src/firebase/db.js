@@ -20,14 +20,12 @@ export const getMenu = async () => {
 /* actualizar el estado de una pizza */
 export const updatePizzaStatus = async (id, available) => {
   try {
-    if (confirm("¿Estás seguro que deseas cambiar el estado de la pizza?")) {
-      console.log(id, available);
+    console.log(id, available);
 
-      await updateDoc(doc(db, "pizzas", id), {
-        available
-      });
-      toast.success("Se cambio el estado de la pizza");
-    }
+    await updateDoc(doc(db, "pizzas", id), {
+      available
+    });
+    toast.success("Se cambio el estado de la pizza");
   } catch (error) {
     console.error(error);
   }
